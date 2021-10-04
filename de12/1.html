@@ -4,13 +4,20 @@
     <!-- ⑥↓タイトルを変えてみよう -->
     <title>第一回課題</title>
     <!-- ⑤スタイルシートの設定をしよう -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/Mystyle.css">
     <!-- h1.htmlからある行をコピペしてくればOK -->
 </head>
+<header>
+    <h1 class="headline">
+        <a href="../de12/index.html" target="_blank">Home</a>
+  </header>
 <body>
-    <h1>第一回課題</h1>
-    <h2>Gitに関して</h2>
-    <h3>Gitとは</h3>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <h1 class="text__slideIn">第一回課題</h1>
+    <h2 class="text__slideIn">Gitに関して</h2>
+    <h3 class="text__slideIn">Gitとは</h3>
     <div>Gitは分散型バージョン管理システムと呼ばれるツール<br>
         バージョンを分散して管理しているため以下の特徴がある。
         <ul>
@@ -20,7 +27,7 @@
         </ul>
         以下の点から複数人での作業などにとても役に立つ
     </div>
-    <h3>Gitの仕組み</h3>
+    <h3 class="text__slideIn">Gitの仕組み</h3>
     <div>
         Gitは以下の仕組みからなっている
         <ul>
@@ -44,15 +51,12 @@
             <li>git commit -m "メッセージ(日付がおすすめ)"</li>
             <li>git push</li>
             の順で入れればできる。
-        <div>参考サイト
-            <a href="https://kitsune.blog/git-summary">【読むだけ】Gitとは？仕組みを初心者にもわかりやすく解説【図解】</a><br>
-        </div>
+        </ol>
+        参考サイト
+        <a href="https://kitsune.blog/git-summary" target="_blank">【読むだけ】Gitとは？仕組みを初心者にもわかりやすく解説【図解】</a>
+    <h2 class="text__slideIn">htmlに関して</h2>
 
-
-
-    </div>
-    <h2>htmlに関して</h2>
-    <h3>htmlとは</h3>
+    <h3 >htmlとは</h3>
     <div>htmlはハイパーテキスト・マークアップ・ランゲージの略<br>
         webを作る時に使われる言語<br>
         様々なタグを用いて組み立てる<br>
@@ -78,9 +82,17 @@
         <li><xmp><title></xmp>
             webのタイトルを決めるタグ</li>
         <li><xmp><h1>-<h6></xmp>
-            見出しのタグ　1~6で文字のサイズが変わる</li>   
+            見出しのタグ　1~6で文字のサイズが変わる</li>
     </ul>
     </div>
+    <div>css参考サイト
+        <a href="https://baigie.me/officialblog/2021/02/25/css-tips-1/" target="_blank">簡単CSSアニメーション＆デザイン20選（ソースコードと解説付き）</a><br>
+        <a href="https://willcloud.jp/knowhow/whats_css/" target="_blank">CSSとは？基本的な書き方を詳しく解説【初心者向け】</a><br>
+        <a href="https://web-camp.io/magazine/archives/27870" target="_blank">headerとfooterの使い方とデザイン例まとめ【HTML初心者必見】</a><br>
+        <a href="https://webdesignfacts.net/entry/css-background-animation/#gsc.tab=0" target="_blank">CSSアニメーションで動く背景に！CSSアニメーションバックグラウンド12選</a><br>
+    </div>
+    <div class="earth"></div>
+
 
 </body>
 </html>
