@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第一回課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle_v2.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+    <h1 class="title">　XBP</h1>
+    <nav class="nav">
+      <ul class="menu-group">
+        <li class="menu-item"><a href="../index.html">Home</a></li>
+        <li class="menu-item"><a href="./index.html">digfab</a></li>
+        <li class="menu-item"><a href="/de12/index.html">デザイン演習</a></li>
+      </ul>
+    </nav>
+  </header>
+<body>
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+ <div class="white">
+    <h1>第一回課題　逆作動ピンセット</h1>
+    <h2>目次</h2>
+     <div class="gray">
+     <ol class="page-contents">
+        <li><a href="#i1">構想段階の手書きスケッチ</a></li>
+        <li><a href="#i2">作品の画像</a></li>
+        <li><a href="#i3">設計ファイル</a></li>
+        <li><a href="#i4">作品の説明</a></li>
+        <li><a href="#i5">なぜこの作品を作ろうという想いに至ったか</a></li>
+        <li><a href="#i6">制作プロセス</a></li>
+        <li><a href="#i7">使用動画</a></li>
+        </ol>
+     </div>
+     <div>
+        <h2 id="i1">1 構想段階の手書きスケッチ</h2>
+        <img src="./images/pincet/pincetsketch.JPG" width="50%">
+     </div>
+     <div>
+        <h2 id="i2">2 作品の画像</h2>
+        <img src="./images/pincet/pincetwork.png" width="50%">
+     </div>
+     <div>
+        <h2 id="i3">3 設計ファイル</h2>
+        <a href="./files/repincet/repincetv12.stl">逆作動ピンセット　stlファイル</a>
+     </div>
+     <div>
+        <h2 id="i4">4 作品の説明</h2>
+        <p>通常のピンセットとは反対の動作をする逆動作ピンセットで、<br>
+            挟むだけでなくすくうことができる形になっている
+        </p>
+    </div>
+    <div>
+        <h2 id="i5">5 なぜこの作品を作ろうという想いに至ったか</h2>
+        <p>ペットの飼育ケージの掃除ですくうことと挟むことが必要になるため<br>
+            両方が可能な道具が欲しかったため
+        
+        </p>
+    </div>
+    <div>
+        <h2 id="i6">6 制作プロセス</h2>
+        <p>初期段階では下のstlで出力した。<br>
+            <a href="./files/repincet/repincetv0.stl">逆作動ピンセット　v0</a><br>
+            <img src="./images/pincet/repincetv0.png" width="50%"><br>
+            <img src="./images/pincet/pincetv0work.JPG" width="50%"><br>
+            しかしこのデータでは戻る力が弱く、隙間ができてしまい、ものを挟むことが難しかった。<br>
+            そこで次に下のstlのように内側にアーチ構造を追加して戻る力を強くしようとした。<br>
+            <a href="./files/repincet/repincetv5.stl">逆作動ピンセット　v5</a><br>
+            <img src="./images/pincet/repincetv5.png" width="50%"><br>
+            <img src="./images/pincet/repincetv5work.JPG" width="50%"><br>
+            アーチの厚さを0.7mm,1mm,2mmとかえて試したが開くのに力がいるようになるだけで<br>
+            戻る力が大きくなることはなかった。<br>
+            方針を変えてピンセットを下のように開いた状態で出力した。<br>
+            <a href="./files/repincet/repincetv12.stl">逆作動ピンセット　v5</a><br>
+            <img src="./images/pincet/repincetv12.png" width="50%"><br>
+            <img src="./images/pincet/repincetv12open.JPG" width="50%"><br>
+            このように出力した後、ピンセットを閉じることによって<br>
+            戻る力が大きくなり、ものをしっかりと挟めるようになった。
+            <img src="./images/pincet/repincetv12close.JPG" width="50%"><br>
+
+
+
+
+
+            
+        </p>
+    </div>
+     
+
+ </div>  
+
+</body>
+</html>
