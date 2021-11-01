@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第五回課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle_v2.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+   <ul class="ddmenu">
+       <li><a href="../index.html">HOME</a></li>
+       <li><a href="../digi_fab/index.html">degifab</a>
+       </li>
+       <li><a href="../de12/index.html">デザイン演習</a>
+       </li>
+       <li><a href="#">degifab課題</a>
+          <ul>
+             <li><a href="../digi_fab/Assignment1_pincet.html">第一回 1-1</a></li>
+             <li><a href="../digi_fab/2.html">第一回 1-2</a></li>
+          </ul>
+       </li>
+       <li><a href="#">演習課題</a>
+        <ul>
+           <li><a href="../de12/1.html">第一回</a></li>
+           <li><a href="../de12/2.html">第二回</a></li>
+           <li><a href="../de12/3.html">第三回</a></li>
+           <li><a href="../de12/4.html">第四回</a></li>
+           <li><a href="../de12/5.html">第五回</a></li>
+        </ul>
+     </li>
+    </ul>
+ </header>
+<body>
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+ <div class="white">
+    <h1>ゲーム作成
+    </h1>
+     <div>
+        <h2 id="i1">丁半</h2>
+        数字の偶数か奇数かを当てるゲーム<br>
+        偶数だと思ったら丁、奇数だと思ったら半と入れる。 
+     </div>
+     <div>
+        <h2 id="i2">ソースコード</h2>
+        <div>
+            <code>
+            <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:60px;margin:0;background-color:#EEF;color:#000;">
+            <li class="cord" style="background-color:#EFF;">print("丁半")</li>
+            <li class="cord" style="background-color:#EEF;">print("サイコロの出目を奇数か偶数か当てるゲーム")</li>
+            <li class="cord" style="background-color:#EFF;">print("偶数だと思ったら丁、奇数だと思ったら半と入れる")</li>
+            <li class="cord" style="background-color:#EEF;">yosou=input("丁か半を入れてください")</li>
+            <li class="cord" style="background-color:#EFF;">import random</li>
+            <li class="cord" style="background-color:#EEF;">a = random.randint(1, 6)</li>
+            <li class="cord" style="background-color:#EFF;">b = random.randint(1, 6)</li>
+            <li class="cord" style="background-color:#EEF;">c=a+b</li>
+            <li class="cord" style="background-color:#EFF;">if yosou=="丁":</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;x=0</li>
+            <li class="cord" style="background-color:#EFF;">else:</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;x=1</li>
+            <li class="cord" style="background-color:#EFF;"></li>
+            <li class="cord" style="background-color:#EEF;">if c%2==0:</li>
+            <li class="cord" style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;deme="丁"</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;y=0</li>
+            <li class="cord" style="background-color:#EFF;">else:</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;deme="半"</li>
+            <li class="cord" style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;y=1</li>
+            <li class="cord" style="background-color:#EEF;">print(c)</li>
+            <li class="cord" style="background-color:#EFF;">print("出目は",c,"で",deme,)</li>
+            <li class="cord" style="background-color:#EEF;">print("あなたの答えは",yosou,"で")</li>
+            <li class="cord" style="background-color:#EFF;">if x==y:</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("正解")</li>
+            <li class="cord" style="background-color:#EFF;">else:</li>
+            <li class="cord" style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("ハズレ")</li>
+            </ol></code>
+       </div>
+     </div>
+ </div>
+</body>
+<footer>
+
+</footer>
+</html>

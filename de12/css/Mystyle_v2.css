@@ -160,7 +160,7 @@ ol{
     text-align: center;
     color: #000000;
     padding-left: 25;
-    list-style-position: inside; margin-left: 0;
+    list-style-position: inside; margin-left: 20;
 
 }
 span.blackback{
@@ -226,4 +226,11 @@ ul.ddmenu ul {
 /* ---------------------------------- */
 ul.ddmenu li:hover ul {
   display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
+}
+
+.cord{
+  text-align: left;
+  align-items: left;
+}
+
 }
