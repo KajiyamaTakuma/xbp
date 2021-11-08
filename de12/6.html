@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第六回課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle_v2.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+   <ul class="ddmenu">
+       <li><a href="../index.html">HOME</a></li>
+       <li><a href="../digi_fab/index.html">degifab</a>
+       </li>
+       <li><a href="../de12/index.html">デザイン演習</a>
+       </li>
+       <li><a href="#">degifab課題</a>
+          <ul>
+             <li><a href="../digi_fab/Assignment1_pincet.html">第一回 1-1</a></li>
+             <li><a href="../digi_fab/2.html">第一回 1-2</a></li>
+             <li><a href="../digi_fab/3.html">第ニ回</a></li>
+             <li><a href="../digi_fab/4.html">スケッチ</a></li>
+          </ul>
+       </li>
+       <li><a href="#">演習課題</a>
+        <ul>
+           <li><a href="../de12/1.html">第一回</a></li>
+           <li><a href="../de12/2.html">第二回</a></li>
+           <li><a href="../de12/3.html">第三回</a></li>
+           <li><a href="../de12/4.html">第四回</a></li>
+           <li><a href="../de12/5.html">第五回</a></li>
+           <li><a href="../de12/6.html">第六回</a></li>
+        </ul>
+     </li>
+    </ul>
+ </header>
+<body>
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+ <div class="white">
+    <h1>可能性の模索
+    </h1>
+     <div>
+        <h2 id="i1">画像の半分づつを合成するツール</h2>
+     </div>
+     <div>
+        <h2 id="i2">ソースコード</h2>
+        <div>
+            <code>
+            <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:60px;margin:0;background-color:#EEF;color:#000;">
+            <li style="background-color:#EFF;">import numpy as np</li>
+            <li style="background-color:#EEF;">from matplotlib import pyplot as plt</li>
+            <li style="background-color:#EFF;">import matplotlib.gridspec as gridspec</li>
+            <li style="background-color:#EEF;">from mpl_toolkits.mplot3d import Axes3D</li>
+            <li style="background-color:#EFF;">import seaborn as sns</li>
+            <li style="background-color:#EEF;">import cv2</li>
+            <li style="background-color:#EFF;">import random</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"># imread(path,-1)でBGRAとして読み込み. ともに(720, 1280, 4)の配列</li>
+            <li style="background-color:#EEF;">#画像の読み込み</li>
+            <li style="background-color:#EFF;">img1 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/みなとみらい公園.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img2 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/伊豆　雪山.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img3 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/伊豆.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img4 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/横浜　荒野.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img5 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/横浜　雪山.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img6 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/横浜　夕焼け.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img7 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/横浜.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img8 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/京都駅　夏.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img9 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/京都駅　秋.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img10 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/京都駅　春.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img11 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/京都駅　冬.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img12 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/京都駅.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img13 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/銀閣　夏.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img14 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/銀閣　秋.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img15 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/銀閣　春.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img16 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/銀閣　冬.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img17 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/銀閣.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img18 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/五重塔.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img19 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/工事現場　氷山.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img20 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/工事現場.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img21 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/竹芝ふ頭　荒野.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img22 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/竹芝ふ頭　草原.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img23 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/竹芝ふ頭.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img24 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/長野　夏.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img25 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/長野　秋.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img26 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/長野　春.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;">img27 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/長野　冬.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EEF;">img28 = cv2.cvtColor(cv2.imread('../../../Desktop/pythonimage/長野.jpg',-1),cv2.COLOR_BGRA2RGBA)</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;"># 画像をランダムで二つ抽出</li>
+            <li style="background-color:#EFF;">list = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img20,img21,img22,img23,img24,img25,img26,img27,img28]</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">a = random.choice(list)</li>
+            <li style="background-color:#EFF;">b = random.choice(list)</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">pdr=a</li>
+            <li style="background-color:#EEF;">sb=b</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;"># [0,1] に正規化</li>
+            <li style="background-color:#EFF;">pdr = pdr / 255</li>
+            <li style="background-color:#EEF;">sb = sb / 255</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">y = pdr.shape[0]</li>
+            <li style="background-color:#EFF;">x = pdr.shape[1]</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"># pdrは右から左、sbは左から右で透過のグラデーションをかける</li>
+            <li style="background-color:#EEF;"># pdrを背景, sbを前景にする想定</li>
+            <li style="background-color:#EFF;">pdr[:,:,3] = np.linspace(-0.5,1.5,x).repeat(y).reshape(x,y).T.clip(0,1)</li>
+            <li style="background-color:#EEF;">sb[:,:,3] = np.linspace(1.5,-0.5,x).repeat(y).reshape(x,y).T.clip(0,1)</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;"># Premultiply(今回は一回だけの合成なのであまり意味がないが)</li>
+            <li style="background-color:#EFF;">for (i,ch) in enumerate(['R','G','B']):</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pdr[:,:,i] = pdr[:,:,i] * pdr[:,:,3]</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;sb[:,:,i] = sb[:,:,i] * sb[:,:,3]</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">blended = np.zeros(pdr.shape)</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"># alphaの式</li>
+            <li style="background-color:#EEF;">blended[:,:,3] = sb[:,:,3] + pdr[:,:,3] * (1 - sb[:,:,3])</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;"># RGBの式</li>
+            <li style="background-color:#EFF;">for (i,ch) in enumerate(['R','G','B']):</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;blended[:,:,i] = sb[:,:,i] + pdr[:,:,i] * (1 - sb[:,:,3])</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">gs = gridspec.GridSpec(3,2)</li>
+            <li style="background-color:#EFF;">fig = plt.figure(figsize=(10,9))</li>
+            <li style="background-color:#EEF;">ax1 = fig.add_subplot(gs[0,0])</li>
+            <li style="background-color:#EFF;">ax2 = fig.add_subplot(gs[0,1])</li>
+            <li style="background-color:#EEF;">ax3 = fig.add_subplot(gs[1:3,:])</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">ax1.set_xticks([]), ax1.set_yticks([])</li>
+            <li style="background-color:#EFF;">ax2.set_xticks([]), ax2.set_yticks([])</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"># アルファは無視して表示</li>
+            <li style="background-color:#EEF;">ax1.set_title('Background')</li>
+            <li style="background-color:#EFF;">ax1.imshow(pdr[:,:,:3])</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">ax2.set_title('Foreground')</li>
+            <li style="background-color:#EEF;">ax2.imshow(sb[:,:,:3])</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">ax3.set_title('Blended')</li>
+            <li style="background-color:#EFF;">ax3.imshow(blended[:,:,:3])</li>
+            <li style="background-color:#EEF;">plt.show()</li>
+            </ol></code>
+       </div>
+     </div>
+     <div>
+      <h2 id="i2">プログラム説明</h2>
+      読み込んだ画像ファイルの中からランダムに二つを選び、<br>
+      半分づつ合成するツール。<br>
+      最初は画像生成ツールを作ろうとしたが難しかったため、<br>
+      既存の画像を合成する方向へと変えた。<br>
+      読み込んでいる画像はフォトショップで編集したため<br>
+      画像が噛み合うといい感じの画像ができる。<br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/mu-QayHqx24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      
+     </div>
+     <div>
+      <h2 id="i2">参照サイト</h2>
+      <a href="https://qiita.com/supersaiakujin/items/54a4671142d80ca962ec" target="_blank">[Python]PythonでOpenCVを使う (基本編)</a><br>
+      <a href="https://optie.hatenablog.com/entry/2018/03/08/174148" target="_blank">Python3 & OpenCV で画像処理を学ぶ[4] 〜 アルファブレンドとエンボス効果（画像間演算の基礎）</a><br>
+        <a href="https://pystyle.info/opencv-alpha-blend/#outline__2" target="_blank">OpenCV – アルファブレンドで画像を合成する方法</a><br>
+        <a href="https://qiita.com/h398qy988q5/items/33091ac96450ab7d8b24" target="_blank">Matplotlibで図の下側に情報を追記する</a><br>
+        <a href="https://hibiki-press.tech/python/random-sequence/4913" target="_blank">【Python】リストや文字列の要素をランダムに抽出する(random.choice, choices, sample)</a><br><br>
+     </div>
+    
+ </div>
+</body>
+<footer>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</footer>
+</html>
