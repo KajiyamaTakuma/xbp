@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>第七回課題</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle_v2.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+   <ul class="ddmenu">
+       <li><a href="../index.html">HOME</a></li>
+       <li><a href="../digi_fab/index.html">degifab</a>
+       </li>
+       <li><a href="../de12/index.html">デザイン演習</a>
+       </li>
+       <li><a href="#">degifab課題</a>
+          <ul>
+             <li><a href="../digi_fab/Assignment1_pincet.html">第一回 1-1</a></li>
+             <li><a href="../digi_fab/2.html">第一回 1-2</a></li>
+             <li><a href="../digi_fab/3.html">第ニ回</a></li>
+             <li><a href="../digi_fab/4.html">スケッチ</a></li>
+             <li><a href="../digi_fab/5.html">第三回</a></li>
+          </ul>
+       </li>
+       <li><a href="#">演習課題</a>
+        <ul>
+           <li><a href="../de12/1.html">第一回</a></li>
+           <li><a href="../de12/2.html">第二回</a></li>
+           <li><a href="../de12/3.html">第三回</a></li>
+           <li><a href="../de12/4.html">第四回</a></li>
+           <li><a href="../de12/5.html">第五回</a></li>
+           <li><a href="../de12/6.html">第六回</a></li>
+           <li><a href="../de12/7.html">第七回</a></li>
+        </ul>
+     </li>
+    </ul>
+ </header>
+<body>
+     <div class="bg"></div>
+     <div class="bg bg2"></div>
+     <div class="bg bg3"></div>
+ <div class="white">
+    <h1>9班　観察結果
+    </h1>
+    <h2>目次</h2>
+    <div class="gray">
+    <ol class="page-contents">
+       <li><a href="#i1">路線の家賃と合計時間の関係</a></li>
+       <li><a href="#i2">京急本線</a></li>
+       <li><a href="#i3">ソースコード</a></li>
+       </ol>
+    </div>
+     <div>
+        <h2 id="i1">路線の家賃と合計時間の関係</h2>
+        <img src="./images/Rent/line all.png" width="60%"><br>
+        縦軸に家賃、横軸を合計時間とした散布図を用いて路線の家賃と合計時間の関係をグラフにした。<br>
+        その結果みなとみらい線が頭一つ抜けて合計時間が短いことがわかった。<br>
+        しかし家賃があまりにも他より高いため選択肢から外す。<br>
+        また、通学にあたって合計時間が長いと大変なので60分以上もおすすめしにくいため、<br>
+        20〜60分の部分を拡大する。<br>
+        <img src="./images/Rent/under60.png" width="60%"><br>
+        この散布図から湘南新宿ライン高海、京急本線、相鉄本線が良さそうに思える。<br>
+        この中で一番本数が出ている路線が京急本線ためおすすめできる。
+     </div>
+     <div>
+        <h2 id="i2">京急本線</h2>
+        <img src="./images/Rent/keikyu.png" width="60%">
+        <br>
+        再び縦軸を家賃、横軸を合計時間の散布図で今度は京急本線の駅の平均を表した。<br>
+        ここから神奈川新町駅が良いと考える。<br>
+        理由の一つに合計時間が短い点にある。<br>
+        合計時間が25分以下の駅で家賃平均が7万以下なのは神奈川新町のみのため。<br>
+        また、価格が似ている京急鶴見などよりも時間が短い。<br>
+        ２つ目の理由として出ている本数が多い点にある。<br>
+        生麦などの6万代のエリアではエアポート急行が止まらず、本数が半分になってしまう。<br>
+        そのため神奈川新町がおすすめのエリアである。
+     </div>
+     <div>
+      <h2 id="i3">ソースコード</h2>
+      <div>
+          <code>
+          <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:60px;margin:0;background-color:#EEF;color:#000;">
+            　<li style="background-color:#EFF;">import pandas as pd  # データ分析に用いるライブラリ</li>
+            <li style="background-color:#EEF;">import matplotlib.pyplot as plt  # グラフ表示に用いるライブラリ</li>
+            <li style="background-color:#EFF;">from mpl_toolkits.mplot3d import Axes3D</li>
+            <li style="background-color:#EEF;">pd.set_option('display.unicode.east_asian_width', True)  # 表示のずれを少し緩和</li>
+            <li style="background-color:#EFF;">plt.rcParams['font.family'] = 'IPAexGothic'  # グラフ表示におけるフォントの指定</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">data_path = "data.csv"</li>
+            <li style="background-color:#EFF;">df_data = pd.read_csv(data_path,  encoding="utf-8-sig")</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">print(df_data.columns)</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">x = df_data.groupby("路線").mean().loc[:, "合計時間"]</li>
+            <li style="background-color:#EEF;">y = df_data.groupby("路線").mean().loc[:, "家賃"]</li>
+            <li style="background-color:#EFF;">plt.scatter(x, y, s=100, alpha=0.2)</li>
+            <li style="background-color:#EEF;">for xx, yy, ss in zip(x, y, x.index):</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;plt.text(xx, yy, ss)</li>
+            <li style="background-color:#EEF;">plt.xlabel("合計時間")</li>
+            <li style="background-color:#EFF;">plt.ylabel("家賃")</li>
+            <li style="background-color:#EEF;">plt.show()</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">mask = df_data.loc[:, "路線"] == "京急本線"</li>
+            <li style="background-color:#EFF;">x = df_data[mask].groupby("駅").mean().loc[:, "合計時間"]</li>
+            <li style="background-color:#EEF;">y = df_data[mask].groupby("駅").mean().loc[:, "家賃"]</li>
+            <li style="background-color:#EFF;">plt.scatter(x, y, s=100, alpha=0.2)</li>
+            <li style="background-color:#EEF;">for xx, yy, ss in zip(x, y, x.index):</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;plt.text(xx, yy, ss)</li>
+            <li style="background-color:#EEF;">plt.xlabel("合計時間")</li>
+            <li style="background-color:#EFF;">plt.ylabel("家賃")</li>
+            <li style="background-color:#EEF;">plt.show()</li>
+            <li style="background-color:#EFF;"></li>
+            </ol></code>
+            <br>
+     </div>
+   </div>
+ </div>
+</body>
+<footer>
+<br>
+<br>
+<br>
+<br>
+<br>
+</footer>
+</html>
