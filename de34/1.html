@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>マイコン　基礎</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+   <ul class="ddmenu">
+       <li><a href="../index.html">HOME</a></li>
+       <li><a href="../digi_fab/index.html">degifab</a>
+       </li>
+       <li><a>デザイン演習</a>
+           <ul>
+               <li><a href="../de12/index.html">I・II</a></li>
+               <li><a href="../de34/index.html">III・IV</a></li>
+               <li><a href="../de56/index.html">V・VI</a></li>
+           </ul>
+       </li>
+       <li><a>III・IV演習</a>
+         <ul>
+             <li><a href="../de34/1.html">第一回</a></li>
+         </ul>
+     </li>
+       
+    </ul>
+ </header>
+<body>
+ <div class="white">
+    <h1>マイコン　基礎</h1>
+     <div>
+        <h2 id="i1">1 Arduino UNOで用いるコード</h2>  
+        <ul>
+         <li>void setup()　マイコンのセットアップ</li>  
+         <li>void loop()　繰り返し</li>
+         <li>delay()　遅延　時間の単位はms</li>
+         <li>digitalWrite 入力切り替え　HIGHがON LOWがOFF</li>
+         <li>pinMode(13,OUTPUT) ピンのアウトプット、インプットの設定</li>
+         <li>Serial.begin(9600) データ転送レートの設定<br>
+            300, 1200, 2400, 4800, 9600, 14400, 19200, 28800, 38400, 57600, 115200</li>
+         <li> analogRead(1) センサーの値の入手</li>
+         <li> Serial.println(val) シリアルポートへ値を出力</li>
+         <li> for (初期化式; 条件式; 変化式){// 繰り返しの中で実行される処理} 最大値になると次へ</i></li>
+         <li> if (条件式){
+            　処理内容1 　//条件式を満たす場合にのみ実行する
+            }<br>
+            else{
+            　処理内容2 　//条件式を満たさない場合にのみ実行される
+            }</li>        
+        </ul>
+        デジタルは0,1 アナログは0〜1023<br>
+        ピンでデジタル、アナログが分かれてる。
+
+        
+     </div>
+     <div>
+        <h2 id="i2">2 暗いときに光らせるコード</h2>
+        <code>
+         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:60px;margin:0;background-color:#EEF;color:#000;">
+         <li style="background-color:#EFF;">void setup() {</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;// put your setup code here, to run once:</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.begin(9600);</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;pinMode(13,OUTPUT);</li>
+         <li style="background-color:#EFF;">}</li>
+         <li style="background-color:#EEF;"></li>
+         <li style="background-color:#EFF;">void loop() {</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;// put your main code here, to run repeatedly:</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;int val=0;</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;val=analogRead(1);</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;Serial.println(val);</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;delay(500);  </li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;if(val&lt;200){</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,LOW);</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;}else{</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digitalWrite(13,HIGH);</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+         <li style="background-color:#EFF;">&nbsp;&nbsp;</li>
+         <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+         <li style="background-color:#EFF;"></li>
+         </ol></code>        
+     </div>
+   <br>
+ </div>
+
+</body>
+<footer>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+</footer>
+</html>
