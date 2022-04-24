@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <!-- ⑥↓タイトルを変えてみよう -->
+    <title>マイコン　基礎</title>
+    <!-- ⑤スタイルシートの設定をしよう -->
+    <link rel="stylesheet" href="css/Mystyle.css">
+    <!-- h1.htmlからある行をコピペしてくればOK -->
+</head>
+<header>
+   <ul class="ddmenu">
+       <li><a href="../index.html">HOME</a></li>
+       <li><a href="../digi_fab/index.html">degifab</a>
+       </li>
+       <li><a>デザイン演習</a>
+           <ul>
+               <li><a href="../de12/index.html">I・II</a></li>
+               <li><a href="../de34/index.html">III・IV</a></li>
+               <li><a href="../de56/index.html">V・VI</a></li>
+           </ul>
+       </li>
+       <li><a>III・IV演習</a>
+         <ul>
+             <li><a href="../de34/1.html">第一回</a></li>
+             <li><a href="../de34/2.html">第ニ回</a></li>
+         </ul>
+     </li>
+       
+    </ul>
+ </header>
+<body>
+ <div class="white">
+
+     <div>
+        <h2 id="i1">1 Neopixel コード</h2>
+        下から順にランダムなところまで光って上から順に消えるコード
+        <code>
+         <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:60px;margin:0;background-color:#EEF;color:#000;">
+            <li style="background-color:#EFF;">#include &lt;Adafruit_NeoPixel.h&gt;</li>
+            <li style="background-color:#EEF;">#define PIN        9 // 信号用のピンを指定</li>
+            <li style="background-color:#EFF;">#define NUMPIXELS 5 // LEDの数を指定</li>
+            <li style="background-color:#EEF;">int brightness=50;//明るさ</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);</li>
+            <li style="background-color:#EFF;"></li>
+            <li style="background-color:#EEF;">void setup() {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;pixels.begin(); // NeoPixel出力ピンの初期化</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;pixels.setBrightness(brightness);</li>
+            <li style="background-color:#EFF;">}</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">void loop() {</li>
+            <li style="background-color:#EEF;"></li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;for(int i=0; i&lt;random(6); i++) {</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;int k=random(256);</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;int l=random(256);</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;int o=random(256);</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(i, pixels.Color(k, 0, l));</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(100);</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;}</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;for(int i=0; i&lt;5; i++) {</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.setPixelColor(4-i, pixels.Color(0, 0, 0));</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pixels.show();</li>
+            <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;delay(100);</li>
+            <li style="background-color:#EEF;">&nbsp;&nbsp;}</li>
+            <li style="background-color:#EFF;">}</li>
+            </ol></code>
+     </div>
+     <div>
+        <h2 id="i2">2 グループワークまとめ</h2> 
+        <img src="./images/8196.jpg" width="50%"><br>
+        <img src="./images/8195.jpg" width="30%">
+
+     </div>
+     <div>
+        <h2 id="i3">3 POV</h2>  
+        <img src="./images/第二回POV.png" width="50%">
+        
+     </div>
+   <br>
+ </div>
+
+</body>
+<footer>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+</footer>
+</html>
