@@ -1,0 +1,235 @@
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff;
+    height: 100%;
+    margin: 0;
+}
+
+/* フッターをページ下部に固定 */
+html, body {
+    height: 100%;
+}
+
+/* ナビゲーションバー */
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(0, 0, 0);
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #cccccc;
+}
+
+/* メインコンテンツ */
+main {
+    margin: 2rem;
+    flex-grow: 1;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100% viewport height */
+}
+
+
+/* セクションのスタイリング */
+section {
+    margin-bottom: 2rem;
+}
+
+/* セクションの見出し */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* 自己紹介セクション */
+#about p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* ポートフォリオセクション */
+#portfolio ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+#portfolio li {
+    list-style: none;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    text-align: center;
+}
+
+#portfolio img {
+    width: 100%;
+    height: auto;
+}
+
+#portfolio h3 {
+    margin: 1rem 0;
+    color: #333;
+}
+
+#portfolio p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* お問い合わせフォームセクション */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-form label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+#contact-form button {
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #777;
+}
+
+/* ソーシャルメディアリンクセクション */
+#social-media ul {
+    display: flex;
+    justify-content: center;
+}
+
+#social-media li {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+#social-media a {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#social-media a:hover {
+    color: #777;
+}
+
+/* フッター */
+footer {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* ホームアイコン */
+nav #home-icon {
+    position: absolute;
+    left: 1rem;
+    top: 3%; /* 上下中央に配置 */
+    transform: translateY(-50%); /* 上下中央を維持するための調整 */
+    width: 2rem; /* アイコンの幅を変更 */
+    height: 2rem; /* アイコンの高さを変更 */
+}
+
+nav #home-icon img {
+    width: 150%;
+    height: 150%;
+}
+
+/* ドロップダウンメニュー */
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    list-style: none;
+    padding: 0;
+    margin: 0; /* マージンを追加 */
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.498);
+    text-align: left; /* テキストを左に配置 */
+}
+
+nav .dropdown-menu li {
+    padding: 0; /* パディングを追加 */
+    margin: 0; /* マージンを追加 */
+}
+
+nav .dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem; /* 変更 */
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+nav .dropdown-menu li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: #333;
+}
+
+nav .dropdown:hover .dropdown-menu {
+    display: block;
+}

@@ -1,32 +1,136 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>XBP_HPsample</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <logotohome>
-    <a href="index.html"><img src="images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>XBP</h1>
-        <h2>梶山のXBPポートフォリオ一覧</h2>
-        <!-- このようにするとコードとして認識されない。（メモができる）-->
-        <!--番号付きのリスト-->
-        <ol>
-            <li><a href="./de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
-            <li><a href="./de34/index.html">デザイン演習Ⅲ・Ⅳ</a></li>
-            <li><a href="./de56/index.html">デザイン演習Ⅴ・Ⅵ</a></li>
-            <li><a href="./digi_fab/index.html">デジタルファブリケーション</a></li>
-            <li><a href="./doyolab/">doyolab</a></li>
-        </ol>
+<body class="flex-wrapper">
+    <header>
+        <nav>
+            <!-- 左上にホームページに飛ぶアイコンを追加 -->
+        <a href="#" id="home-icon"><img src="images/0_XBlogo.png" alt="Home"></a>
+        <ul>
+            <li><a href="#about">XBP</a></li>
+            <!-- ポートフォリオ項目にドロップダウンメニューを追加 -->
+            <li class="dropdown">
+                <a href="#portfolio">ポートフォリオ</a>
+                <ul class="dropdown-menu">
+                    <li><a href="de12/index.html">デザイン演習Ⅰ・Ⅱ</a></li>
+                    <li><a href="de12/index.html">デジタルファブリーケーション</a></li>
+                    <li><a href="de34/index.html">デザイン演習Ⅲ・Ⅳ</a></li>
+                    <li><a href="de56/index.html">デザイン演習Ⅴ・Ⅵ</a></li>
+                    <li><a href="doyolab/index.html">doyolab</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section id="hero">
+            <h1>XBP</h1>
+            <p>XBPは、私が学んでいる大学の分野横断型プログラムで、高度なデザイン人材を育成することを目指しています。</p>
+            <p>このプログラムでは、デザイン、開発、デジタルマーケティング、ブランディング、UI/UXデザインなど、多岐にわたる分野の知識と技術を習得しています。経験豊富な専門家からの指導を受け、幅広い業界や市場に対応できるデザイン人材を目指しています。</p>
+            <p>私のポートフォリオには、このXBPプログラムを通じて獲得した技能と、実際に取り組んだプロジェクトを紹介しています。</p>
+        </section>
 
+        <section id="about">
+            <h2>自己紹介</h2>
+            <p>梶山拓真　神奈川大学経営学部国際経営学科所属</p>
+        </section>
 
-            
-        <br>
-        <br>
+        <section id="portfolio">
+            <h2>ポートフォリオ</h2>
+            <ul>
+                <li>
+                    <a href="de12/index.html">
+                        <img src="images/スクリーンショット 2023-04-19 8.50.09.png" alt="プロジェクト1の画像">
+                        <h3>デザイン演習Ⅰ・Ⅱ</h3>
+                    </a>
+                    <p>デザインリサーチ、データサイエンス、プログラミングの基礎</p>
+                    <p>----------</p>
+                    <p>インタビューや観察、データ分析を通し、共感力、洞察力、表現力を身につける演習</p>
+                    <P>共創、発信のための基礎スキルを身につけ、プログラミングの基礎を体験する</P>
+                    <P>最終課題として年代・性別で見る鞄に関する観察</P>
+                </li>
+                <li>
+                    <a href="de34/index.html">
+                        <img src="images/S__119758854.jpg" alt="プロジェクト2の画像">
+                        <h3>デザイン演習Ⅲ・Ⅳ</h3>
+                    </a>
+                    <p>プロトタイピング、商品・サービス企画設計</p>
+                    <p>----------</p>
+                    <p>フィジカルコンピューティング、プログラミング、IoT技術などプロトタイピングに必要なテクノロジーを身につけるとともに、創造的な思考・行動プロセスを身につける演習</p>
+                    <p>最終課題として三日坊主を防ぐインテリアを考案</p>
+                </li>
+                <li>
+                    <a href="de56/index.html">
+                        <img src="images/スクリーンショット 2023-04-19 8.53.41.png" alt="プロジェクト3の画像">
+                        <h3>デザイン演習Ⅴ・Ⅵ</h3>
+                    </a>
+                    <p>ビジネスデザイン</p>
+                    <p>----------</p>
+                    <p>事業計画、マーケティング 起業のために必要な知識や仕組みを知る。模擬的に事業計画書、マーケティングプランを作成し、最終的には外部審査員を迎えたビジネスプランコンテストを行う演習</p>
+                    <p>最終課題としてお土産と思い出を紐付けるサービス「メメント」を考案</p>
+                </li>
+                <li>
+                    <a href="digi_fab/index.html">
+                        <img src="images/DSC_1645.jpg" alt="プロジェクト3の画像">
+                        <h3>デジファブ</h3>
+                    </a>
+                    <p>ファブリケーション技術の習得</p>
+                    <p>----------</p>
+                    <p>ファブラボで3Dプリンターなどのデジタル工作機器を利用した造形技術を学び、２年生以降でのプロトタピングの基礎的な素養を身につける講義</p>
+                    <p>最終課題として爬虫類のケージを作成</p>
+                </li>
+                <li>
+                    <a href="doyolab/index.html">
+                        <img src="project3.jpg" alt="プロジェクト3の画像">
+                        <h3>doyolab</h3>
+                    </a>
+                    <p>プロジェクト3の説明。</p>
+                </li>
+            </ul>
+        </section>
+    </main>
 
+    <footer>
+        <!--
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>メールアドレス: your-email@example.com</p>
+            <p>電話番号: 0120-123-456</p>
+        </section>-->
+        <p>Copyright &copy; 2023 Kajiyama
+        <!-- お問い合わせフォームセクションの追加 
+        <section id="contact-form">
+            <h2>お問い合わせフォーム</h2>
+            <form action="submit-form.php" method="post">
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="name" required>
 
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">送信</button>
+            </form>
+        </section>-->
+
+        <!-- ソーシャルメディアリンクセクションの追加 
+        <section id="social-media">
+            <h2>ソーシャルメディア</h2>
+            <ul>
+                <li><a href="https://twitter.com/your_username" target="_blank">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/your_username" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/your_username" target="_blank">GitHub</a></li>
+            </ul>
+        </section>-->
+    </footer>
 </body>
 </html>
+
