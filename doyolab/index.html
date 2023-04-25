@@ -1,23 +1,116 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>doyolab</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="images/xbp.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XBP</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <logotohome>
-    <a href="../index.html"><img src="./images/0_XBlogo.png" alt=""></a>
-    </logotohome>
-    <h1>doyolab</h1>
-    <h2>演習ノート一覧</h2>
-    <ul>
-    <li><a href="1.html" target="_blank">第一回</a></li>
-</ul>    
-<br>
-<br>
+<body class="flex-wrapper">
+    <header>
+        <nav>
+            <!-- 左上にホームページに飛ぶアイコンを追加 -->
+        <a href="../index.html" id="home-icon"><img src="images/0_XBlogo.png" alt="Home"></a>
+        <ul>
+            <!-- ポートフォリオ項目にドロップダウンメニューを追加 -->
+            <li class="dropdown">
+                <a href="#portfolio">ポートフォリオ</a>
+                <ul class="dropdown-menu">
+                    <li><a href="de12/index.html">プロジェクト1</a></li>
+                    <li><a href="de12/index.html">プロジェクト1</a></li>
+                    <li><a href="de34/index.html">プロジェクト1</a></li>
+                    <li><a href="de56/index.html">プロジェクト1</a></li>
+                    <li><a href="doyolab/index.html">プロジェクト1</a></li>
+                </ul>
+            </li>
+        </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>doyolab</h2>
+        </section>
+
+        <section id="about">
+            <h2>自己紹介</h2>
+            <p>梶山拓真　神奈川大学経営学部国際経営学科所属</p>
+        </section>
+
+        <section>
+            <h2><a href="1.html">やりたいこと</a></h2>
+        </section>
 
 
+        <section id="portfolio">
+            <h2>ポートフォリオ</h2>
+            <ul>
+                <li>
+                    <a href="gamedevelopment/0.html">
+                        <img src="images/スクリーンショット 2023-04-19 8.50.09.png" alt="プロジェクト1の画像">
+                        <h3>ゲーム開発1</h3>
+                    </a>
+                    <p>隙間時間リズムアクションゲーム</p>
+                    <p>----------</p>
+                    <p>ワンタップ操作で手軽に遊べる簡単リズムアクションゲームの開発を目指しています。このゲームでは、敵に対して攻撃と防御を使い分けて倒すことが目的です。プレイヤーは、隙間時間に短時間で楽しめるようにデザインされたゲームプレイを体験できます。</p>
+                </li>
+                <li>
+                    <a href="de34/index.html">
+                        <img src="images/S__119758854.jpg" alt="プロジェクト2の画像">
+                        <h3>プロジェクト1</h3>
+                    </a>
+                    <p>プロトタイピング、商品・サービス企画設計</p>
+                    <p>----------</p>
+                    <p>フィジカルコンピューティング</p>
+                </li>
+                <li>
+                    <a href="de56/index.html">
+                        <img src="images/スクリーンショット 2023-04-19 8.53.41.png" alt="プロジェクト3の画像">
+                        <h3>プロジェクト1</h3>
+                    </a>
+                    <p>ビジネスデザイン</p>
+                    <p>----------</p>
+                    <p>事業計画</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <!--
+        <section id="contact">
+            <h2>お問い合わせ</h2>
+            <p>メールアドレス: your-email@example.com</p>
+            <p>電話番号: 0120-123-456</p>
+        </section>-->
+        <p>Copyright &copy; 2023 Kajiyama
+        <!-- お問い合わせフォームセクションの追加 
+        <section id="contact-form">
+            <h2>お問い合わせフォーム</h2>
+            <form action="submit-form.php" method="post">
+                <label for="name">お名前:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">メールアドレス:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">メッセージ:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">送信</button>
+            </form>
+        </section>-->
+
+        <!-- ソーシャルメディアリンクセクションの追加 
+        <section id="social-media">
+            <h2>ソーシャルメディア</h2>
+            <ul>
+                <li><a href="https://twitter.com/your_username" target="_blank">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/your_username" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/your_username" target="_blank">GitHub</a></li>
+            </ul>
+        </section>-->
+    </footer>
 </body>
 </html>
+
