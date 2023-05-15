@@ -10,7 +10,7 @@ function createGrid() {
     cells[i] = [];
     for (let j = 0; j < size; j++) {
       const cell = document.createElement('div');
-      cell.classList.add('cell');
+      cell.classList.add('cell', 'black'); // All cells start as black
       cell.addEventListener('click', () => {
         if (movesLeft > 0) {
           flipCells(i, j);
@@ -64,7 +64,7 @@ function checkGameOver() {
 function resetGrid() {
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-      cells[i][j].classList.remove('black');
+      cells[i][j].classList.add('black');
     }
   }
 

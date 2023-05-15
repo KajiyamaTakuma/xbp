@@ -10,7 +10,7 @@ function createGrid() {
     cells[i] = [];
     for (let j = 0; j < size; j++) {
       const cell = document.createElement('div');
-      cell.classList.add('cell');
+      cell.classList.add('cell'); // Initialize every cell as white
       cell.addEventListener('click', () => {
         if (movesLeft > 0) {
           flipCells(i, j);
@@ -44,17 +44,17 @@ function updateMovesLeft() {
 }
 
 function checkGameOver() {
-  let gameOver = true;
+  let allWhite = true;
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-      if (!cells[i][j].classList.contains('black')) {
-        gameOver = false;
+      if (cells[i][j].classList.contains('black')) {
+        allWhite = false;
         break;
       }
     }
   }
 
-  if (gameOver) {
+  if (allWhite) {
     document.getElementById('game-over').textContent = 'ゲームクリア！';
   } else {
     document.getElementById('game-over').textContent = '';
@@ -76,7 +76,7 @@ function resetGrid() {
 
 function createNewGame() {
   initialFlips = [];
-  let flips = Math.floor(Math.random() * 9) + 1;  // Generate a number between 1 and 9
+  let flips = Math.floor(Math.random() * 8) + 2;  // Generate a number between 2 and 9
   
   while(flips > 0){
     let i = Math.floor(Math.random() * size);
