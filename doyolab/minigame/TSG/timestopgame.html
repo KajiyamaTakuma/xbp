@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Stop Game</title>
+  <style>
+    #game {
+      border: 1px solid black;
+      height: 400px;
+      width: 800px;
+      position: relative;
+    }
+    .enemy {
+      position: absolute;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      background-color: red;
+    }
+    #gauge {
+      border: 1px solid black;
+      height: 20px;
+      width: 800px;
+      background-color: grey;
+    }
+    #gauge-fill {
+      background-color: blue;
+      height: 100%;
+      width: 0;
+    }
+    #score {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <div id="game"></div>
+  <div id="gauge">
+    <div id="gauge-fill"></div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
