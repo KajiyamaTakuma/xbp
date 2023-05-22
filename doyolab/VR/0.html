@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta quest 2のUE5開発環境設定</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li><a href="0.html">UE5開発環境設定</a></li>
+              <li><a href="1.html">プロジェクト概要</a></li>
+              <li class="dropdown"><a href="#progress">　　進捗状況　　</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="2.html">基本ルール</a></li>
+                   
+                </ul></li>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="/doyolab/gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="/doyolab/VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="/doyolab/minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h1>UE5開発環境設定</h1>
+            <h2>開発環境</h2>
+            <ul>
+                <li>HMD:Meta quest 2</li>
+                <li>開発エンジン:Unreal Engine 5</li>
+                <li>その他環境:Android studio、Oculus ADB Drivers</li>
+            </ul>
+            <p>
+                これらを用いた環境で開発を行う
+            </p>
+            <h2>開発環境設定手順</h2>
+            <h3>1 UnrealEngine5のダウンロード</h3>
+                <ol>
+                    <li>gamesアカウントを作成しランチャーをダウンロード</li>
+                    <li>Epic luncherのUnreal EngineからUnreal Engine5をダウンロード</li>
+                </ol>
+            <h3>2 Android studioの設定</h3>
+                <p>UnrealEngine5でMeta quest 2の開発を行う上でAndroid studioが必要。<a href="https://docs.unrealengine.com/5.2/ja/how-to-set-up-android-sdk-and-ndk-for-your-unreal-engine-development-environment/">UnrealEngineの公式ドキュメント</a>やブログなどを参考に設定。環境によって手順を変える必要がある。</p>
+                <ol>
+                    <li>Android studio4.0をアーカイブからダウンロード<a href="https://developer.android.com/studio/archive?hl=ja">アーカイブリンク</a><br>
+                    ※ダウンロードのディレクトリはデフォルト推奨</li>
+                    <li>Android studioを初期設定し、JDKをダウンロード<br>
+                    ※同様にダウンロードのディレクトリはデフォルト推奨、またディレクトリ名は英字のみ（空白不可）</li>
+                    <li>SDK Command-line Toolsのダウンロード　Android studioの右下の歯車からSDK Managerを選択し、Android SDK Command-line Toolsのlatestをダウンロード<br>
+                    ※UnrealEngine5.1以前の場合は8.0をダウンロード、SetupAndroid スクリプトの編集が必要</li>
+                    <li>UnrealEngine5のインストールディレクトリのEngine/Extras/AndroidからOSに応じたSetupAndroid スクリプトを起動<br>
+                    ※うまくいかない場合スクリプト内のパスを変更するとうまくいく場合がある</li>
+                    <li>OSでAndroid Studio のインストールを最終確定 OSによって異なる。WindowsではPCの再起動</li>
+                    <li>Android NDKを設定 Engine/ExtrasからOSに応じたSetupAndroid スクリプトを起動し、完了したらコンピュータを再起動</li>
+                </ol>
+                <p>4、5の手順が上手くいかない場合の対策</p>
+                    <ul>
+                        <li>SDK  ManegerからSetupAndroid スクリプトを見てCMakeなどを手動ダウンロード</li>
+                        <li>PCの設定から環境変数のPathにAndroid studio内にあるJreディレクトリを追加</li>
+                        <li>SetupAndroid スクリプトを見て手動で環境変数を設定</li>
+                        <li>手動でSDKなどを設定</li>
+                    </ul>
+                <p>手動でSDKなどを設定する場合</p>
+                    <ol>
+                        <li>SDK  ManegerからSetupAndroid スクリプトを見てCMakeなどを手動ダウンロード</li>
+                        <li>PCの設定から環境変数のPathにAndroid studio内にあるJreディレクトリを追加</li>
+                        <li>SetupAndroid スクリプトを見て手動で環境変数を設定</li>
+                        <li>Unreal Engineを開き、[Edit] > [Project Settings] を開いて、[Platforms] > [Android] > [Android SDK]セクションへ移動<br>
+                            SDKconfigのSDK、NDK、JAVAを…押してそれぞれのディレクトリを指定
+                            <ul>
+                                <li>SDK:.../SDK</li>
+                                <li>NDK:.../SDK/NDK/Versionに応じたフォルダ</li>
+                                <li>JAVA:.../android studio/jre</li>
+                            </ul></li>
+                    </ol>
+            <h3>3 Meta quest 2の開発者モード有効化</h3>
+                    <ol>
+                        <li>Meta quest 2のアカウントを<a href="https://developer.oculus.com/manage/settings/">developer Oculus.com</a>から開発者として認証</li>
+                        <li>Meta quest 2と連携しているスマホのOculusアプリから開発者モードを有効化</li>
+                    </ol>
+            <h3>4 Oculus ADB Drivers（windowsのみ）</h3>
+            <p><a href="https://developer.oculus.com/downloads/package/oculus-adb-drivers/?locale=ja_JP">Meta quest公式サイトから</a>からダウンロード</p>
+            <h3>5 Meta quest 2をPCと接続</h3>
+            <p>typeCケーブルでPCと繋げることでUnrealEngineのプロジェクトを実行可能に</p>
+            <p>cmdでadb divecesと入力することで接続確認可能</p>
+            <h3>参考サイト</h3>
+            <ul>
+                <li><a href="https://dany1468-game.hateblo.jp/entry/2021/10/22/113259">UE5 の VR テンプレートを Oculus Quest 2 で実行する</a></li>
+                <li><a href="https://argonauts.hatenablog.jp/entry/2022/05/15/143555">【UE5】OculusQuestが動くまでの設定について</a></li>
+                <li><a href="https://developer.oculus.com/documentation/unreal/unreal-quick-start-guide-quest/?locale=ja_JP">Meta Quest公式ドキュメント 最初のMeta Quest VRアプリをUnreal Engineで作成する</a></li>
+                <li><a href="https://developer.oculus.com/documentation/native/android/mobile-device-setup/?locale=ja_JP">Meta Quest公式ドキュメント デバイスの設定</a></li>
+                <li><a href="https://docs.unrealengine.com/5.2/ja/how-to-set-up-android-sdk-and-ndk-for-your-unreal-engine-development-environment/">UnrealEngine公式ドキュメント Android SDK および NDK を設定する</a></li>
+                <li><a href="https://zenn.dev/korinvr/articles/ue5-android-build">UE5・UE4.25以降でAndroidビルドできるようにする（Windows環境）</a></li>
+                <li><a href="https://zenn.dev/daichi_gamedev/books/unreal-engine-5/viewer/android-play">Androidで実機プレイとパッケージ化する方法【UE5,UE4】</a></li>
+                <li><a href="https://pontako.com/vr-meta-quest-developer-mode/">【VR】「Meta Quest 2」開発者モードを有効化する方法まとめ（Oculus Quest 2）</a></li>
+           </ul>
+            
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
