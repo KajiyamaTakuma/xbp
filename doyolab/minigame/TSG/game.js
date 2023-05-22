@@ -1,13 +1,19 @@
 var gauge = document.getElementById("gauge-fill");
-var gaugeValue = 800; // Start at max
+var gaugeMax = 800; // 追加
+var gaugeValue = gaugeMax; // Start at max
 var score = 0;
 var enemies = [];
-var maxEnemies = 10;
+var maxEnemies = 20;
 var timeStop = false;
 var gameOver = false;
 var spacePressed = false;
 var spawnRate = 1000; // start spawn rate
 var speedMultiplier = 1; // start speed multiplier
+var retryButton = document.getElementById("retry-button");
+
+
+// Check if the local storage has leaderboard data
+var leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
 // Spawn an enemy at random intervals
 setInterval(function() {
@@ -30,7 +36,7 @@ setInterval(function() {
 
 // Update spawn rate and speed multiplier over time
 setInterval(function() {
-  spawnRate = Math.max(10, spawnRate - 1000); // decrease spawn rate, minimum is 0.2 seconds
+  spawnRate = Math.max(200, spawnRate - 300); // decrease spawn rate, minimum is 0.2 seconds
   speedMultiplier += 0.01; // increase speed multiplier
 }, 1000);
 
@@ -49,6 +55,22 @@ function updateGame() {
       if (!timeStop) {
         gameOver = true;
         document.getElementById("score").textContent += " Game Over!";
+        retryButton.style.display = "block";  // Show the retry button
+        // When game over, save the score to the leaderboard
+        leaderboard.push(score);
+        // Sort the leaderboard in descending order and keep only the top 10 scores
+        leaderboard.sort(function(a, b) { return b - a; });
+        leaderboard = leaderboard.slice(0, 10);
+        // Save the leaderboard back to the local storage
+        localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
+        // Update the leaderboard display
+        var leaderboardList = document.getElementById('leaderboard-list');
+        leaderboardList.innerHTML = '';
+        for (var i = 0; i < leaderboard.length; i++) {
+          var listItem = document.createElement('li');
+          listItem.textContent = leaderboard[i];
+          leaderboardList.appendChild(listItem);
+        }
         return;
       }
     }
@@ -56,37 +78,52 @@ function updateGame() {
 
   if (!timeStop || !spacePressed) {
     // Increase the gauge value faster
-    gaugeValue += 1;
+    gaugeValue += 5;
     if (gaugeValue > 800) {
       gaugeValue = 800;
     }
   } else if (spacePressed) {
     // Decrease the gauge value while space is pressed
-    gaugeValue -= 5;
+    gaugeValue -= 10;
     if (gaugeValue < 0) {
       gaugeValue = 0;
       timeStop = false;
     }
   }
-  gauge.style.width = gaugeValue + "px";
-
-  // Schedule the next update
-  setTimeout(updateGame, 20);
+  gauge.style.width = gaugeValue +"px";
+// Schedule the next update
+setTimeout(updateGame, 20);
 }
 
 // Listen for the space key
 window.addEventListener("keydown", function (event) {
-  if (event.code === "Space" && gaugeValue > 0 && !gameOver) {
-    timeStop = true;
-    spacePressed = true;
-  }
+if (event.code === "Space" && gaugeValue > 0 && !gameOver) {
+timeStop = true;
+spacePressed = true;
+}
 });
 
 window.addEventListener("keyup", function (event) {
-  if (event.code === "Space") {
-    spacePressed = false;
-    timeStop = false; // Time resumes when space key is released
-  }
+if (event.code === "Space") {
+spacePressed = false;
+timeStop = false; // Time resumes when space key is released
+}
+});
+
+// Add event listener to the retry button
+retryButton.addEventListener("click", function() {
+  // Reset game state
+  enemies.forEach(enemy => enemy.div.remove());
+  enemies = [];
+  score = 0;
+  document.getElementById("score").textContent = "スコア: " + score;
+  gaugeValue = gaugeMax;
+  document.getElementById("gauge-fill").style.width = gaugeValue + "px";
+  gameOver = false;
+  retryButton.style.display = "none";  // Hide the retry button
+
+  // Restart the game loop
+  updateGame();
 });
 
 // Start the game

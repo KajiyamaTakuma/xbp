@@ -1,0 +1,88 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #description {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #game {
+    position: relative;
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #ddd;
+    overflow: hidden;
+  }
+  
+  #score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+  }
+  
+  #gauge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 10px;
+    background-color: #bbb;
+  }
+  
+  #gauge-fill {
+    width: 800px; /* Start at max */
+    height: 10px;
+    background-color: #f00;
+  }
+  
+  .enemy {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #00f;
+  }
+  
+  #leaderboard {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #leaderboard-list {
+    list-style-position: inside;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+  #game {
+    position: relative; /* Add this line */
+    /* ... */
+  }
+  
+  #retry-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;  /* Adjust button width */
+    height: 60px;  /* Adjust button height */
+    font-size: 20px;  /* Adjust font size */
+    background-color: #f44336;  /* Button color */
+    color: white;  /* Text color */
+    border: none;
+    border-radius: 5px;  /* Add border radius */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #retry-button:hover {
+    background-color: #ff5722;  /* Adjust hover color */
+  }
+  

@@ -1,43 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Time Stop Game</title>
-  <style>
-    #game {
-      border: 1px solid black;
-      height: 400px;
-      width: 800px;
-      position: relative;
-    }
-    .enemy {
-      position: absolute;
-      cursor: pointer;
-      width: 50px;
-      height: 50px;
-      background-color: red;
-    }
-    #gauge {
-      border: 1px solid black;
-      height: 20px;
-      width: 800px;
-      background-color: grey;
-    }
-    #gauge-fill {
-      background-color: blue;
-      height: 100%;
-      width: 0;
-    }
-    #score {
-      font-size: 24px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="game.css">
 </head>
 <body>
-  <div id="score">Score: 0</div>
-  <div id="game"></div>
-  <div id="gauge">
-    <div id="gauge-fill"></div>
+  <div id="description">
+    <h2>タイムストップゲーム</h2>
+    <p>SPACEキーを押すと時間が止まり、敵をクリックして倒します！しかし、時間を止めるゲージは使用すると減少します。敵を倒すとスコアが増えます。敵が画面を横切るとゲームオーバーです。</p>
   </div>
+  <div id="game">
+    <div id="score">スコア: 0</div>
+    <div id="gauge"><div id="gauge-fill"></div></div>
+  </div>
+  <div id="leaderboard">
+    <h2>ランキング</h2>
+    <ol id="leaderboard-list">
+    </ol>
+  </div>
+  <button id="retry-button" style="display: none;">リトライ</button>
   <script src="game.js"></script>
 </body>
 </html>
