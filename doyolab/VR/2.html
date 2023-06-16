@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マテリアル研究</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li><a href="0.html">UE5開発環境設定</a></li>
+              <li><a href="1.html">プロジェクト概要</a></li>
+              <li class="dropdown"><a href="#progress">　　進捗状況　　</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="2.html">360°画像を生かす方法</a></li>
+                   
+                </ul></li>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="/doyolab/gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="/doyolab/VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="/doyolab/minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h1>VRゲーム開発</h1>
+            <h2>360°画像を生かす方法</h2>
+            <p>360°画像をVR上で見る際のマテリアルを作成<br>
+            360画像は画像生成AIを使用<br>
+            <a href="https://skybox.blockadelabs.com">skybox</a>←こちらのサイトにて作成</p>
+             <h3>1 背景としての活用</h3>
+                <p>画像のような背景として360°画像を使用</p>
+                <h4>作成方法</h4>
+                <p>
+                    &nbsp;&nbsp;マテリアルで球の内側にテクスチャを貼り付け天球として扱う<br>
+                    &nbsp;&nbsp;※Skydomeのテクスチャの変更ではテクスチャが上下分かれて反映されてしまった
+                </p>
+
+             <h3>2 小物として利用</h3>
+                <p>
+                    &nbsp;&nbsp;別世界を覗くレンズのようなものとして活用<br>
+                </p>
+                <h4>作成方法</h4>
+                <p>&nbsp;&nbsp;マテリアルでカメラのベクターを取り、UVマッピングを反転させることで可能</p>
+
+            
+            <h3>3 オブジェクトとしての利用</h3>
+                <p>
+                    &nbsp;&nbsp;動画のような挙動をするテクスチャとして活用。<br>
+                    &nbsp;&nbsp;ワープホールのような物体として360°画像を使用できる。<br>
+                    &nbsp;&nbsp;VR上で中に入るとテレポートしたかのように感じられる。<br>
+                </p>
+                <h4>作成方法</h4>
+                <p>
+                    &nbsp;&nbsp;2で作成したマテリアルを裏表両方に適用することで可能
+                </p>
+     
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
