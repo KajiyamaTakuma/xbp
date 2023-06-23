@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マテリアル研究</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li><a href="0.html">UE5開発環境設定</a></li>
+              <li><a href="1.html">プロジェクト概要</a></li>
+              <li class="dropdown"><a href="#progress">　　進捗状況　　</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="2.html">360°画像を生かす方法</a></li>
+                   
+                </ul></li>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="/doyolab/gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="/doyolab/VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="/doyolab/minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h1>VRゲーム開発</h1>
+            <h2>ポインターの作成</h2>
+            <p>VR上でのコントローラーをポインターとして機能させる<br>
+            ポインターはカーソルや照準として利用できる<br>
+             <h3>仕組み</h3>
+                <p>
+                    コントローラーにアタッチしているアクターからレイキャストを行ってヒットした地点に3Dウィジェットを配置<br>
+                    レイキャストとはレーザーを撃って当たった情報を得ることができる機能。<br>
+                    開始地点と終了地点の設定が可能。<br>
+                </p>
+                
+                <h4>作成方法</h4>
+                <p>
+                    &nbsp;&nbsp;①ポインター用のUIを作成する。ポインタはillustratorで作成<br>
+                    &nbsp;&nbsp;②ポインター用のアクターを作成する。<br>
+                    &nbsp;&nbsp;③ポインター用のアクター内にwidgetコンポーネントを作成する。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;widgetのUIを作成したポインター用のUIを選択。<br>
+                    &nbsp;&nbsp;④コントローラーにポインターを出すアクターをアタッチする。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;今回はUE5のVRテンプレートの銃を使用<br>
+                    &nbsp;&nbsp;⑤tickを用いてレイキャストのBPを組む。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;開始地点は銃口、終了地点は銃口の位置のフォワードベクトルのn倍。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;倍数を変えることでポインターとし機能する有効射程を調整できる。<br>
+                    &nbsp;&nbsp;⑥ヒットした地点のベクトルと法線ベクトルを取る。<br>
+                    &nbsp;&nbsp;⑦ヒットした地点ー（ヒットした地点ー開始地点）にポインターを出す。<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;ポインターをヒットした位置の少し手前に表示することで移動するオブジェクトにもポイン<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;タの表示ができる<br>
+                </p>
+     
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
