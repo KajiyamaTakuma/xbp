@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask基本</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="../gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="../VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="../minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h2>Flask基本</h2>
+            <p>
+                FlaskはPythonのWebアプリケーションフレームワーク。<br>
+                小規模向けの簡単なWebアプリケーションに最適。<br>
+                基本的にFlaskのコードは{}で囲む
+            </p>
+            <h4>変数の扱い方</h4>
+            <p>
+                app.pyで変数を宣言。return render_templateで受け渡し。htmlにて{{変数名}}。<br>
+            </p>
+            <h4>使用例</h4>
+            <p>app.py<br>
+                <xmp>a="こんにちは"
+return render_template("index.html", txt=a)</xmp><br>
+                index.html<br>
+                <xmp><h1>テスト</h1></xmp>
+                    <xmp><div></xmp>
+                        <xmp> てすとです。<br>
+{{ txt }}<br></xmp>
+                        <xmp></div></xmp>
+                
+                </p>
+                <h4>for文</h4>
+                <p> {% for data in list %} <br>
+                    {% endfor %}</p> 
+                
+                <h4>if文</h4>
+                <p>{% if ○○ %}<br>
+                    :<br>
+                    {% elif ×× %}<br>
+                    :<br>
+                    {% else %}<br>
+                    :<br>
+                    {% endif %}<br>
+                    </p>
+
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
