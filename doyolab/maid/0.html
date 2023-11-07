@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作ったもの</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="../gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="../VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="../minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h2>作ったもの</h2>
+            <p>
+                作ったものを置いておくだけ<br>
+            </p>
+            <h4>gitpush.py</h4>
+            <p>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">#!/usr/bin/env python3</li>
+                <li style="background-color:#EEF;"># -*- coding: utf-8 -*-</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">import os</li>
+                <li style="background-color:#EFF;">import subprocess</li>
+                <li style="background-color:#EEF;">from datetime import datetime</li>
+                <li style="background-color:#EFF;">import tkinter as tk</li>
+                <li style="background-color:#EEF;">from tkinter import filedialog, messagebox</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">def execute_git_commands(repo_directory):</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;os.chdir(repo_directory)</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;subprocess.run(['git', 'status'])</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;subprocess.run(['git', 'add', '.'])</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;current_date = datetime.now().strftime("%Y-%m-%d")</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;commit_message = current_date</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;subprocess.run(['git', 'commit', '-m', commit_message])</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;subprocess.run(['git', 'push'])</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;messagebox.showinfo("完了", "Gitコマンドの実行が完了しました。")</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">def browse_directory():</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;directory = filedialog.askdirectory()</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;repo_directory.set(directory)</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">def run_script():</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;execute_git_commands(repo_directory.get())</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">root = tk.Tk()</li>
+                <li style="background-color:#EEF;">root.title("Git Automation")</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">repo_directory = tk.StringVar()</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">frame = tk.Frame(root)</li>
+                <li style="background-color:#EFF;">frame.pack(padx=20, pady=20)</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">label = tk.Label(frame, text="リポジトリのディレクトリ:")</li>
+                <li style="background-color:#EEF;">label.grid(row=0, column=0)</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">entry = tk.Entry(frame, textvariable=repo_directory, width=40)</li>
+                <li style="background-color:#EFF;">entry.grid(row=0, column=1)</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">browse_button = tk.Button(frame, text="参照", command=browse_directory)</li>
+                <li style="background-color:#EEF;">browse_button.grid(row=0, column=2)</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">run_button = tk.Button(frame, text="実行", command=run_script)</li>
+                <li style="background-color:#EFF;">run_button.grid(row=1, column=1, pady=20)</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">root.mainloop()</li>
+                <li style="background-color:#EEF;"></li>
+                </ol></code></p>
+            
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
