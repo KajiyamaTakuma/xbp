@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーム開発の進捗状況</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+      <a href="../index.html" id="home-icon">
+            <img src="../images/xbp.ico" alt="ホーム">
+        </div>
+        <ul>
+            <li><a href="0.html">プロジェクト概要</a></li>
+            <li class="dropdown"><a href="#progress">　　進捗状況　　</a>
+               <ul class="dropdown-menu">
+                <li><a href="1.html">基本ルール</a></li>
+                <li><a href="2.html">プレイヤーの動作実装</a></li>
+                <li><a href="3.html">システムの実装</a></li>
+                 
+              </ul></li>
+            <li class="dropdown">
+               <a href="#portfolio">ポートフォリオ</a>
+               <ul class="dropdown-menu">
+                <li><a href="../gamedevelopment/0.html">ゲーム開発1</a></li>
+                <li><a href="../VR/0.html">VRゲーム開発</a></li>
+                <li><a href="../minigame/index.html">ミニゲーム</a></li>
+               </ul>
+           </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="progress">
+            <h1>現在の進捗状況</h1>
+            <h2>敵の実装</h2>
+            <h3>敵を実装する上での要件</h3>
+            <ul>
+               <li>予備動作と攻撃の切り替え</li>
+               <li>曲との同期</li>
+               <li>ダメージ処理</li>
+               <li>ステータス</li>
+           </ul>
+           <h3>敵の実装方法</h3>
+           <h4>様々な敵を作りやすいようシステムの根幹部分を親クラスとして作成</h4>
+            <p>プログラムを組んだBP<br>
+            <img src="screenshot1.png">
+            ここでの処理は<br>
+            装備とキャラクター本体のアニメーションの同期<br>
+            ダメージを受けた際の挙動<br> 
+            ステータスの管理<br>
+            Quartzシステムと連携<br>
+            を行っている。<br>
+           </p>
+           <h4>親クラスを元に敵を複数作成</h4>
+           <p>敵ごとに違う攻撃になるようにプログラムを作成<br>
+            プログラムを組んだBP<br>
+            <img src="screenshot1.png">
+            ここでの処理は<br>
+            攻撃の管理<br>
+            予備動作と攻撃の切り替え<br> 
+            を行っている。<br>
+        </section>
+
+         <!-- <section id="screenshots">
+            <h2>スクリーンショット</h2>
+            <figure>
+                <img src="screenshot1.png" alt="ゲームのスクリーンショット1">
+                <figcaption>スクリーンショット1の説明</figcaption>
+            </figure>
+            <!-- 他のスクリーンショットを追加 -->
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
