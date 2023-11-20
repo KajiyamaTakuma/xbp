@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask基本</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex-wrapper">
+    <nav>
+        <a href="../index.html" id="home-icon">
+              <img src="../images/xbp.ico" alt="ホーム">
+          </div>
+          <ul>
+              <li class="dropdown">
+                 <a href="#portfolio">ポートフォリオ</a>
+                 <ul class="dropdown-menu">
+                    <li><a href="../gamedevelopment/0.html">ゲーム開発1</a></li>
+                    <li><a href="../VR/0.html">VRゲーム開発</a></li>
+                    <li><a href="../minigame/index.html">ミニゲーム</a></li>
+                 </ul>
+             </li>
+          </ul>
+      </nav>
+    <main>
+        <section id="overview">
+            <h2>Flask CSV</h2>
+            <p>
+                ウェブサイトからCSVへの書き込みが可能<br>
+            </p>
+            <h4>フォームの作成方法</h4>
+            <p>
+               フォームにて入力欄と送信するものを決める。<br>
+               <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">&lt;form method="POST" action="{{ url_for('registration')}}" enctype="multipart/form-data"&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;場所&lt;br&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="place" size="35"&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内容&lt;br&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="content" size="150"&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;緯度経度&lt;br&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="longitude_latitude" size="100"&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ハッシュタグ&lt;br&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="hashtag" size="100"&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;豆知識&lt;br&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="text" name="tips" size="150"&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;"></li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;br&gt;&lt;br&gt;</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;input type="submit" value="登録"&gt;</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/form&gt;</li>
+                </ol></code>
+                <br>
+                app.pyにて受け取った値をCSVへ入力する<br>
+            </p>
+            <code>
+                <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+                <li style="background-color:#EFF;">@app.route('/reg',methods=["POST"])</li>
+                <li style="background-color:#EEF;">def registration():</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;place = request.form["place"]</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;content = request.form["content"]</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;longitude_latitude = '(' + request.form["longitude_latitude"] + ')'</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;hashtag = request.form["hashtag"]</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;tips = request.form["tips"]</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;id = get_id()</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;data = [[id,place,content,longitude_latitude,hashtag,tips]]</li>
+                <li style="background-color:#EFF;"></li>
+                <li style="background-color:#EEF;"># CSVファイルに書き込む</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;with open('./mmcsv.csv', 'a', newline='', encoding='utf-8') as file:</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer = writer(file)</li>
+                <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csv_writer.writerows(data)</li>
+                <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;return redirect(url_for('index'))</li>
+                </ol></code>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>© 2023 kajiyama. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
