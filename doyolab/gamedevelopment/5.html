@@ -26,9 +26,9 @@
             <li class="dropdown">
                <a href="#portfolio">ポートフォリオ</a>
                <ul class="dropdown-menu">
-                <li><a href="/doyolab/gamedevelopment/0.html">ゲーム開発1</a></li>
-                <li><a href="/doyolab/VR/0.html">VRゲーム開発</a></li>
-                <li><a href="/doyolab/minigame/index.html">ミニゲーム</a></li>
+                <li><a href="../gamedevelopment/0.html">ゲーム開発1</a></li>
+                <li><a href="../VR/0.html">VRゲーム開発</a></li>
+                <li><a href="../minigame/index.html">ミニゲーム</a></li>
                </ul>
            </li>
         </ul>
@@ -36,17 +36,18 @@
     <main>
         <section id="progress">
             <h1>現在の進捗状況</h1>
-            <h2>ゲームプレイの基本ルールの設計</h2>
-            <ul>
-               <li>ゲームの目的: できるだけ多くの戦士を倒して高スコアを目指す</li>
-               <li>ゲームの操作: 画面をタップして戦士に攻撃を行い、タイミングよくタップして防御も行う</li>
-               <li>攻撃と防御: 敵の攻撃タイミングに合わせてタップして防御し、隙を見つけて攻撃する</li>
-               <li>ライフ: プレイヤーのライフがゼロになるとゲームオーバー</li>
-               <li>強化: 敵を倒した後に選択</li>
-               <li>スコアシステム: 敵を倒すスピードやコンボ数に応じてスコアが加算される</li>
-               <li>ゲームの進行: ステージクリアごとに新たな敵や環境が登場し、難易度が上がる</li>
-               <li>セーブ機能: ゲームの進行状況は自動的に保存され、次回プレイ時に続きから始められる</li>
-           </ul>
+            <h2>敵の実装2</h2>
+            <h3>敵の段階的強化</h3>
+            <h4>敵が倒していくごとに強化されていくように設定</h4>
+           <h3>敵の実装方法</h3>
+           <h4>倒した数を元にステータスに倍率をかけていく</h4>
+            <p>プログラムを組んだBP<br>
+            <img src="screenshot1.png">
+            ここでは<br>
+            敵を倒した後の処理<br>
+            出てくる際の敵のステータス設定<br> 
+            を行っている。<br>
+           </p>
         </section>
 
          <!-- <section id="screenshots">
